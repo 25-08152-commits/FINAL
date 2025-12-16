@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Love That Got Away</title>
+  <link href="" rel="stylesheet">
+  <style>
+
+    
+    /* ===== VISUAL UPGRADE ===== */
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Section card look */
+.photo-desc-section {
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(6px);
+  border-radius: 20px;
+  padding: 40px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.photo-desc-section:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(176, 48, 96, 0.25);
+}
+
+/* Photo polish */
+.photo-box {
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.4s ease;
+}
+
+.photo-box:hover {
+  transform: scale(1.03);
+}
+
+/* Text elegance */
+.desc-box {
+  border-radius: 16px;
+  background: rgba(255,255,255,0.9);
+}
+
+.desc-box h3 {
+  font-weight: 500;
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+/* Romantic divider instead of plain <hr> */
+hr {
+  border: none;
+  height: 1px;
+  margin: 70px auto;
+  width: 70%;
+  background: linear-gradient(
+    to right,
+    transparent,
+    #b03060,
+    transparent
+  );
+  opacity: 0.6;
+}
+
+/* Title glow */
+h1 {
+  margin-bottom: 50px;
+  letter-spacing: 2px;
+}
+
+/* Mobile refinement */
+@media (max-width: 900px) {
+  .photo-desc-section {
+    padding: 25px;
+  }
+}
+
+    body {
+      margin: 0;
+      font-family: 'Georgia', 'Times New Roman', serif;
+      background: linear-gradient(120deg, #fdecef, #f8d7e3);
+      color: #4a2c3a;
+      line-height: 1.7;
+      padding: 0 20px;
+    }
+
+    h1 {
+      font-size: 3em;
+      text-align: center;
+      margin-top: 30px;
+      color: #b03060;
+      text-shadow: 2px 2px 6px rgba(176,48,96,0.35);
+    }
+
+    h2 {
+      font-size: 2em;
+      margin-top: 50px;
+      color: #8b2c4a;
+      text-shadow: 1px 1px 4px rgba(176,48,96,0.3);
+    }
+
+    h5 {
+      text-align: center;
+      font-style: italic;
+      color: #7a3b53;
+      margin: 5px 0 20px 0;
+      letter-spacing: 1px;
+    }
+
+    /* Top Navigation */
+    header.top-nav {
+      background: linear-gradient(to right, #b03060, #d87093);
+      color: white;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+    }
+
+    header.top-nav nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    header.top-nav nav a:hover {
+      color: #ffe6f0;
+      transform: scale(1.1);
+    }
+
+    /* Photo + Description Layout */
+    .photo-desc-section {
+      max-width: 1100px;
+      margin: 60px auto;
+      display: flex;
+      gap: 40px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .photo-desc-section.reverse {
+      flex-direction: row-reverse;
+    }
+
+    .photo-box {
+      width: 280px;
+      height: 360px;
+      background: #fff;
+      border: 2px solid #b03060;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      color: #b03060;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    }
+
+    .desc-box {
+      flex: 1;
+      height: 220px;
+      background: #fff;
+      border: 2px solid #b03060;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #b03060;
+      font-weight: bold;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+      padding: 20px;
+      text-align: center;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @media screen and (max-width: 900px) {
+      .photo-desc-section {
+        flex-direction: column !important;
+      }
+      .desc-box {
+        height: auto;
+      }
+    }
+    /* ===== CINEMATIC OVERLAY ===== */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255,255,255,0.35), transparent 40%),
+    radial-gradient(circle at 80% 80%, rgba(176,48,96,0.25), transparent 45%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* ===== MEMORY CARD ENHANCEMENT ===== */
+.photo-desc-section {
+  position: relative;
+  overflow: hidden;
+}
+
+/* glowing edge */
+.photo-desc-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(176,48,96,0.25),
+    transparent
+  );
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.photo-desc-section.show::before {
+  opacity: 1;
+}
+
+/* floating accent */
+.photo-desc-section::after {
+  content: "♥";
+  position: absolute;
+  bottom: 20px;
+  right: 30px;
+  font-size: 1.5rem;
+  opacity: 0.15;
+  animation: floatHeart 6s ease-in-out infinite;
+}
+
+@keyframes floatHeart {
+  0% { transform: translateY(0); opacity: 0.15; }
+  50% { transform: translateY(-15px); opacity: 0.3; }
+  100% { transform: translateY(0); opacity: 0.15; }
+}
+
+/* ===== IMAGE DRAMA ===== */
+.photo-box::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.45),
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.photo-box:hover::after {
+  opacity: 1;
+}
+
+/* ===== TEXT DEPTH ===== */
+.desc-box {
+  position: relative;
+}
+
+.desc-box::before {
+  content: "“";
+  position: absolute;
+  top: -30px;
+  left: 20px;
+  font-size: 4rem;
+  opacity: 0.1;
+  color: #b03060;
+}
+
+/* ===== SECTION SEPARATION ===== */
+hr {
+  margin: 160px auto;
+}
+
+/* ===== ENDING FADE ===== */
+section:last-of-type {
+  margin-bottom: 200px;
+}
+
+/* ===== SPACING FIX (COMPACT) ===== */
+
+/* tighten section spacing */
+.photo-desc-section {
+  margin: 35px auto; /* was 60px */
+  padding: 28px;     /* was 40px */
+}
+
+/* tighten image-text gap */
+.photo-desc-section {
+  gap: 28px; /* was 40px */
+}
+
+/* fix HR over-spacing */
+hr {
+  margin: 30px auto; /* was 70px / 160px */
+  width: 50%;
+  opacity: 0.5;
+}
+
+/* remove massive ending gap */
+section:last-of-type {
+  margin-bottom: 80px; /* was 200px */
+}
+
+/* tighter title spacing */
+h1 {
+  margin-bottom: 25px; /* was 50px */
+}
+
+@media (max-width: 600px) {
+  .photo-desc-section {
+    margin: 25px auto;
+    padding: 22px;
+  }
+
+  hr {
+    margin: 20px auto;
+  }
+}
+
+
+  </style>
+</head>
+
+<body>
+  <header class="top-nav">
+    <div><strong>LOVE</strong></div>
+    <nav>
+      <a href="First.html">HOME</a> |
+      <a href="pictures.html">PICTURES</a> |
+      <a href="video.html">VIDEO</a> |
+      <a href="about.html">ABOUT</a>
+    </nav>
+  </header>
+
+  <h1>The Love That Got Away</h1>
+  <hr>
+
+  
+  <section class="photo-desc-section">
+    <div class="photo-box"><img src="SJ2.jpg" alt="Picture 1"></div>
+    <div class="desc-box">
+      <h3>Remember our first library date? We spent hours side by side, quietly lost in our own little world. Sharing AirPods made everything feel so close and special.</h3>
+    </div>
+  </section>
+<hr>
+  <section class="photo-desc-section reverse">
+    <div class="photo-box"><img src="SJ5.jpg" alt="Picture 2"></div>
+    <div class="desc-box">
+      <h3>This was the moment we started sitting together. I felt nervous but happy because she was beside me. We didn’t know someone took a picture, but now it feels special because it shows the start of us. Just sitting there with her already made my heart feel full.</h3>
+    </div>
+  </section>
+<hr>
+  <section class="photo-desc-section">
+    <div class="photo-box"><img src="SJ3.jpg" alt="Picture 3"></div>
+    <div class="desc-box">
+      <h3>This was the time we sneaked into my house and laid together, talking deeply about everything. We shared our thoughts, our worries, and our dreams in a quiet place where it felt like only us existed. That moment felt warm and safe, and I remember thinking I never wanted it to end.</h3>
+    </div>
+  </section>
+<hr>
+  <section class="photo-desc-section reverse">
+    <div class="photo-box"><img src="SJ4.jpg" alt="Picture 4"></div>
+    <div class="desc-box">
+      <h3>This was before the first time we took a photo in a photo booth, and we were so clingy to each other. We stayed close, laughing and feeling. It felt like we wanted to stay that way forever, just holding on to each other.</h3>
+    </div>
+  </section>
+<hr>
+  <section class="photo-desc-section">
+    <div class="photo-box"><img src="SJ55.jpg" alt="Picture 5"></div>
+    <div class="desc-box">
+      <h3>I captured this moment when she was together with my mom. It made my heart feel warm because it felt like she was already part of my life. Seeing them together made me happy and proud, like everything felt right in that moment.</h3>
+    </div>
+  </section>
+<hr>
+  <section class="photo-desc-section reverse">
+    <div class="photo-box"><img src="SJ6.jpg" alt="Picture 6"></div>
+    <div class="desc-box">
+      <h3>This was our first date on her birthday. I gave her a gift which our second teddy bear, and we ate together at Pancake House. I was so happy at the same time, and my heart was full. I loved her so much that day, and I still do.</h3>
+    </div>
+  </section>
+<hr>
+  <section class="photo-desc-section">
+    <div class="photo-box"><img src="SJ7.jpg" alt="Picture 7"></div>
+    <div class="desc-box">
+      <h3>This was our first movie together after school. Even though I was scared of horror movies, I stayed because I wanted to be with her. I felt safe just sitting beside her, and that made my fear disappear.</h3>
+    </div>
+  </section>
+<hr>
+  <section class="photo-desc-section reverse">
+    <div class="photo-box"><img src="SJ8.jpg" alt="Picture 8"></div>
+    <div class="desc-box">
+      <h3>After school, I dropped her off at her place, and we first ate at Waltermart. We laughed and enjoyed PE. My heart felt so light and happy, just being with her. I loved every little moment, and I still do.</h3>
+    </div>
+  </section>
+<hr>
+  <section class="photo-desc-section">
+    <div class="photo-box"><img src="SJ99.jpg" alt="Picture 9"></div>
+    <div class="desc-box">
+      <h3>We sneaked into my house again and took a photo on my laptop. My heart was so full, just being close to her and sharing that little, happy secret. I loved every second, and I still do.</h3>
+    </div>
+  </section>
+<hr>
+  <section class="photo-desc-section reverse">
+    <div class="photo-box"><img src="SJ10.jpg" alt="Picture 10"></div>
+    <div class="desc-box">
+      <h3>We went on a little date to a coffee shop and tried to review some things about our subject. I loved being with her, laughing and learning together, and my heart felt so happy and full. I still treasure that day.</h3>
+    </div>
+  </section>
+<hr>
+  <section class="photo-desc-section">
+    <div class="photo-box"><img src="SJ11.jpg" alt="Picture 11"></div>
+    <div class="desc-box">
+      <h3>This was our work immersion day, and I hoped our schedules would align. Luckily, we were in the same week and even sat together on the same bus. Just being close to her made my heart so happy, and I still smile thinking about it.</h3>
+    </div>
+  </section>
+<hr>
+  <section class="photo-desc-section reverse">
+    <div class="photo-box"><img src="SJ12.jpg" alt="Picture 12"></div>
+    <div class="desc-box">
+      <h3>We went to her friend’s debut and took a photo together. She looked so beautiful, and I couldn’t stop smiling. My heart felt full just being by her side, and I still remember that feeling.</h3>
+    </div>
+  </section>
+<hr>
+  <section class="photo-desc-section">
+    <div class="photo-box"><img src="SJ13.jpg" alt="Picture 13"></div>
+    <div class="desc-box">
+      <h3>After school, I waited for her outside the bathroom. Just seeing her smile when she came out made my heart so happy, and I loved that little moment with her.</h3>
+    </div>
+  </section>
+<hr>
+  <section class="photo-desc-section reverse">
+    <div class="photo-box"><img src="SJ144.jpg" alt="Picture 14"></div>
+    <div class="desc-box">
+      <h3>This is our picture together in the photo booth. Look at how she hugged me with her warm, gentle hands—it made my heart feel so full and happy. I still love that moment.</h3>
+    </div>
+  </section>
+<hr>
+  <section class="photo-desc-section">
+    <div class="photo-box"><img src="SJ155.jpg" alt="Picture 15"></div>
+    <div class="desc-box">
+      <h3>After work immersion, some students wanted to stop over, and we took a mirror shot together. Look at her eyes—they were so beautiful, and my heart felt so happy just being near her.</h3>
+    </div>
+  </section>
+<hr>
+<section class="photo-desc-section reverse">
+  <div class="photo-box"><img src="SJ16.jpg" alt="Picture 16"></div>
+  <div class="desc-box">
+    <h3>This was before Valentine’s Day. I gave her a flower, and she was a little mad at me that time, hehe. Seeing her made my heart so full, and I still smile thinking about it.</h3>
+  </div>
+</section>
+<hr>
+<section class="photo-desc-section">
+  <div class="photo-box"><img src="SJ17.jpg" alt="Picture 17"></div>
+  <div class="desc-box">
+    <h3>This Valentine’s Day, I gave her a flower that would never dry. I really miss giving her flowers and seeing her smile—it always made my heart so happy.</h3>
+  </div>
+</section>
+<hr>
+<section class="photo-desc-section reverse">
+  <div class="photo-box"><img src="SJ18.jpg" alt="Picture 18"></div>
+  <div class="desc-box">
+    <h3>We went on a date and ate samgyupsal together. We even watched a movie while eating, and my heart felt so happy just being with her. I still love remembering that day.</h3>
+  </div>
+</section>
+<hr>
+<section class="photo-desc-section">
+  <div class="photo-box"><img src="SJ19.jpg" alt="Picture 19"></div>
+  <div class="desc-box">
+    <h3>After we looked at suits for our prom, we went to eat together. Look at how beautiful she is—my heart felt so full just being near her, and I still remember that smile.</h3>
+  </div>
+</section>
+<hr>
+<section class="photo-desc-section reverse">
+  <div class="photo-box"><img src="SJ20.jpg" alt="Picture 20"></div>
+  <div class="desc-box">
+    <h3>We ate together while waiting, and look who loves to playfully bite my arm! Being with her made my heart so happy, and I still laugh thinking about it.</h3>
+  </div>
+</section>
+<hr>
+<section class="photo-desc-section">
+  <div class="photo-box"><img src="SJ21.jpg" alt="Picture 21"></div>
+  <div class="desc-box">
+    <h3>While waiting for our pictures in the studio, we took another photo together. I just love her so much, and my heart felt so happy that day.</h3>
+  </div>
+</section>
+<hr>
+<section class="photo-desc-section reverse">
+  <div class="photo-box"><img src="SJ22.jpg" alt="Picture 22"></div>
+  <div class="desc-box">
+    <h3>This was our first studio booth together, wearing what we wore to prom. Look how mesmerized I was by her beauty—my heart felt so full just being with her.</h3>
+  </div>
+</section>
+<hr>
+<section class="photo-desc-section">
+  <div class="photo-box"><img src="SJ233.jpg" alt="Picture 23"></div>
+  <div class="desc-box">
+    <h3>Look at this photo—how we held hands in public. I’m so proud of it, and my heart felt so happy just being close to her.</h3>
+  </div>
+</section>
+<hr>
+<section class="photo-desc-section reverse">
+  <div class="photo-box"><img src="SJ244.jpg" alt="Picture 24"></div>
+  <div class="desc-box">
+    <h3>We went back to the photo studio to take a picture wearing our graduation togas. Seeing her in it made my heart so full, and I loved that moment with her.</h3>
+  </div>
+</section>
+<hr>
+<section class="photo-desc-section">
+  <div class="photo-box"><img src="SJ255.jpg" alt="Picture 25"></div>
+  <div class="desc-box">
+    <h3>We went to a coffee shop to paint, and then I surprised her with a ring. She said yes to be my girlfriend, and my heart was overflowing with happiness. I still treasure that magical moment.</h3>
+  </div>
+</section>
+<hr>
+<section class="photo-desc-section reverse">
+  <div class="photo-box"><img src="SJ266.jpg" alt="Picture 26"></div>
+  <div class="desc-box">
+    <h3>After school, we went out together to eat and talked about how our days went. Just being with her and sharing little stories made my heart so happy, and I still love remembering that.</h3>
+  </div>
+</section>
+<hr>
+<section class="photo-desc-section">
+  <div class="photo-box"><img src="SJ27.jpg" alt="Picture 27"></div>
+  <div class="desc-box">
+    <h3>I always go with her to her room since we’re not classmates. Just being near her made my heart feel so happy, and I loved every little moment we spent together.</h3>
+  </div>
+</section>
+<hr>
+<section class="photo-desc-section reverse">
+  <div class="photo-box"><img src="SJ28.jpg" alt="Picture 28"></div>
+  <div class="desc-box">
+    <h3>We went on a karaoke date at the arcade in SM and sang together, even though she was a little mad at my voice. Being with her made my heart so happy, and I still smile thinking about it.</h3>
+  </div>
+</section>
+<hr>
+<section class="photo-desc-section">
+  <div class="photo-box"><img src="SJ29.jpg" alt="Picture 29"></div>
+  <div class="desc-box">
+    <h3>This was our last time eating buldak together. It was the first time we ate together in college after we broke up. My heart felt a mix of happiness and nostalgia, and I’ll always remember that day.</h3>
+  </div>
+</section>
+<hr>
+<section class="photo-desc-section reverse">
+  <div class="photo-box"><img src="SJ30.jpg" alt="Picture 30"></div>
+  <div class="desc-box">
+    <h3>This was our last ice cream together. I held it in my hand, but it felt like I was holding onto a moment I could never get back. Every bite was sweet, yet my heart ached, knowing it was the end of us. I still miss that day, and I still miss her.</h3>
+  </div>
+</section>
+<hr>
+<script>
+  const cards = document.querySelectorAll('.photo-desc-section');
+
+  window.addEventListener('scroll', () => {
+    cards.forEach(card => {
+      const rect = card.getBoundingClientRect();
+      const offset = window.innerHeight - rect.top;
+      if (offset > 100) {
+        card.style.transform = `translateY(${Math.max(0, 30 - offset / 15)}px)`;
+      }
+    });
+  });
+</script>
+
+
+</body>
+</html>

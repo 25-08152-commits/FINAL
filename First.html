@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Love That Got Away</title>
+</head>
+<style>
+/* =========================
+   GENERAL STYLING
+========================= */
+body {
+  margin: 0;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  background: linear-gradient(120deg, #fdecef, #f8d7e3);
+  color: #4a2c3a;
+  line-height: 1.7;
+  padding: 0 20px;
+}
+
+/* =========================
+   HEADINGS
+========================= */
+h1 {
+  font-size: 3em;
+  text-align: center;
+  margin-top: 30px;
+  color: #b03060;
+  text-shadow: 2px 2px 6px rgba(176,48,96,0.35);
+}
+
+h2 {
+  font-size: 2em;
+  margin-top: 50px;
+  color: #8b2c4a;
+  text-shadow: 1px 1px 4px rgba(176,48,96,0.3);
+}
+
+h5 {
+  text-align: center;
+  font-style: italic;
+  color: #7a3b53;
+  margin: 5px 0 20px 0;
+  letter-spacing: 1px;
+}
+
+/* =========================
+   TOP NAVIGATION
+========================= */
+header.top-nav {
+  background: linear-gradient(to right, #b03060, #d87093);
+  color: white;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+}
+
+header.top-nav nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+header.top-nav nav a:hover {
+  color: #ffe6f0;
+  transform: scale(1.1);
+}
+
+/* =========================
+   MAIN IMAGE UNDER TITLE
+========================= */
+.main-image {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  margin: 30px 0;
+  border-radius: 12px;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+}
+
+.main-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 38%;
+  transition: transform 0.4s ease;
+}
+
+.main-image img:hover {
+  transform: scale(1.05);
+}
+
+/* =========================
+   STORY SECTION
+========================= */
+.story-section {
+  max-width: 900px;
+  margin: 0 auto 50px auto;
+  padding: 30px 25px;
+  background: rgba(255, 240, 246, 0.95);
+  border-radius: 22px;
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+  border: 1px solid #e6b3c6;
+}
+
+.story-section p {
+  margin: 20px 0;
+  font-size: 1.15em;
+  color: #4a2c3a;
+}
+
+/* =========================
+   TYPES OF LOVE SECTION
+========================= */
+.love-types {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.love-type {
+  background: linear-gradient(135deg, #d87093, #b03060);
+  padding: 20px;
+  border-radius: 18px;
+  flex: 1 1 250px;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+  color: #fff;
+  transition: transform 0.3s ease;
+}
+
+.love-type:hover {
+  transform: translateY(-6px);
+}
+
+/* =========================
+   QUOTES
+========================= */
+.story-section p[style*="italic"] {
+  font-size: 1.3em;
+  color: #b03060;
+  text-align: center;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+/* =========================
+   HORIZONTAL RULES
+========================= */
+hr {
+  border: none;
+  border-top: 3px dashed #d87093;
+  margin: 30px 0;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  h1 { font-size: 2.2em; }
+  h2 { font-size: 1.7em; }
+
+  .love-types {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .love-type {
+    width: 90%;
+  }
+}
+</style>
+
+<body>
+  <header class="top-nav">
+    <div><strong>LOVE</strong></div>
+    <nav>
+      <a href="First.html">HOME</a> |
+      <a href="pictures.html">PICTURES</a> |
+      <a href="video.html">VIDEO</a> |
+      <a href="about.html">ABOUT</a>
+    </nav>
+  </header>
+
+  <h1 style="text-align: center;">The Love That Got Away</h1>
+  <hr>
+  <div class="main-image">
+  <img src="SJ1.jpg"alt="Love That Got Away" />
+</div>
+  <h5 style="text-align: center;">
+    A quiet story of two people who once chose each other, shared countless moments,
+    and dreamed of a future that felt certain. Time, distance, and circumstances
+    slowly pulled them apart, leaving behind memories that still linger.
+  </h5>
+  <hr>
+
+  <section>
+    <h1>Types of Love</h1>
+    <div class="love-types">
+      <div class="love-type">
+        <p><strong>True Love</strong> is a deep, lasting love based on understanding, trust, and commitment. It goes beyond just feelings and is about caring for someone through good times and bad. True love grows stronger over time because it is built on respect and emotional connection.</p>
+      </div>
+      <div class="love-type">
+        <p><strong>Puppy Love</strong> is a light, early-stage love that is often innocent and full of excitement. It usually happens when people are young and is more about infatuation or crushes than deep emotional bonding. Puppy love is sweet but often temporary.</p>
+      </div>
+      <div class="love-type">
+        <p><strong>Unconditional Love</strong> is love without limits or conditions. It means caring for someone no matter what they do, even if they make mistakes. Parents often show this kind of love, but it can also exist between close friends or partners. It focuses on giving rather than expecting in return.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr>
+
+  <section class="story-section">
+    <h1 style="text-align: center;">Have You Ever Fallen in Love?</h1>
+    <h5 style="text-align: center;">- Dren</h5>
+    <p style="margin-top: 20px; font-style: italic; text-align: center;">"Love is not about how many days, months, or years you have been together. Love is about how much you love each other every single day."</p>
+<hr>
+    <h2>Chapter 1: The First Time I Saw Her</h2>
+    <p>Last school year, 2023–2024, I met her. She was my classmate. I didn’t know her well at first, and honestly, I was shy. I was shy about talking to anyone, but especially her. She was… different. She was beautiful. Like an angel. I felt like my heart would beat too fast whenever I looked at her.</p>
+    <p>The first time we really talked was almost by accident. When our teacher stepped out of the classroom for a while, the class decided to circle our chairs to get to know each other better. I sat nervously, feeling my hands sweat and my legs shake. I didn’t know what to say. But then she smiled at me. Just that small smile made me feel like my chest was about to burst.</p>
+    <p>We started talking. I don’t remember exactly what we said, maybe something about school or the chairs, but it didn’t matter. I just felt… happy. I couldn’t stop looking at her. Every time our eyes met, it was like the world disappeared for a moment. I wanted to say so many things, but I didn’t know how. I was too shy. All I could do was listen, smile, and hope she noticed me.</p>
+    <p>That moment was small, but it felt important. I didn’t know it yet, but that was the first step in a story I would never forget.</p>
+<hr>
+    <h2>Chapter 2: Sitting Together</h2>
+    <p>A few days later, something lucky happened. She became my groupmate in one of our subjects. Our other classmates weren’t very helpful, so it ended up being just the two of us working together. At first, I was nervous. I didn’t know how to act around her. I didn’t want to say anything stupid. But slowly, we started talking more.</p>
+    <p>At first, it was simple. I asked her about the homework. She asked me about the lesson. But then, little by little, the conversation changed. She told me about her favorite things. I told her about mine. We shared small secrets, small laughs. I started noticing tiny things about her—the way she laughed at jokes, the way she tilted her head when she thought, the way she listened carefully.</p>
+    <p>Every day, I liked her a little more. Every time we talked, I felt my heart grow. Sometimes, I would catch myself staring at her, and I would blush and look away. She had this effect on me without even trying. She made me feel alive in a way I had never felt before.</p>
+    <p>I didn’t say anything about my feelings yet. I was too scared. But every little moment with her made me fall a little deeper. It felt like every day, I was learning something new—not just about her, but about myself, too.</p>
+<hr>
+    <h2>Chapter 3: Talking All Night</h2>
+    <p>Then came the calls. At first, it was just small talk after school. “Did you finish your homework?” “Did you understand the lesson?” But it slowly turned into more. We started talking about life, about dreams, about fears, about the little things that nobody else knew. Sometimes, the calls would last for hours.</p>
+    <p>I loved those calls. I loved hearing her voice, even though I felt shy. Sometimes I wanted to say so many things, but my words got stuck in my throat. Sometimes, I just listened, smiling to myself in the dark, thinking about how lucky I was.</p>
+    <p>Then one night, something big happened. My heart was beating so fast I thought it might jump out of my chest. I told her I had a crush on her. My hands were shaking. My voice was quiet. I was scared. But I had to tell her. I couldn’t keep it in anymore.</p>
+    <p>And she… she said she liked me too. I couldn’t believe it. I kept thinking, “Is this real? Could someone like me really like me?” She told me she loved how smart I am and even said she thought I was good-looking. I felt like I was dreaming. That night, I didn’t sleep. I kept thinking about her words. I kept thinking about her smile. I felt happy, scared, nervous, and alive all at once.</p>
+    <p>That was the night I realized something important. Love is scary, but it’s also amazing. Love is feeling your heart grow faster, feeling nervous and happy at the same time, feeling like the world is brighter just because someone is in it. That night, I knew I was falling in love, completely and without control.</p>
+<hr>
+    <h2>Chapter 4: Feeling Shy and Scared</h2>
+    <p>Even though she liked me, I felt shy and scared a lot. Every time I saw her, my heart would beat so fast that I felt like it might jump out of my chest. I kept thinking about my flaws and all the things I thought were wrong with me. She was so beautiful and smart, and I felt small and clumsy next to her. I wondered if she would still like me tomorrow or if she might change her mind.</p>
+    <p>Sometimes I wanted to tell her everything I felt, but the words would get stuck in my throat. I would look at her and then quickly look away because I felt nervous. My mind kept imagining her laughing with someone else, and it made my chest hurt. I wished I could be braver and tell her how much she meant to me every single day.</p>
+    <p>Even with all my fears, being near her made me feel alive. Her smile could make my whole day better, and her voice made me feel calm. I tried to focus on the little things—like how she twirled her hair when she thought or the way she laughed at small jokes. Those small things made me feel closer to her, even if I was too scared to say it.</p>
+    <p>At night, I would think about her before I went to sleep. I would imagine us talking, laughing, and having fun together. I didn’t know what the future would bring, but I knew one thing—I was falling in love, and nothing could stop it, even if I was shy and scared.</p>
+<hr>
+    <h2>Chapter 5: Problems with Friends</h2>
+    <p>Then something happened that made everything confusing and hard. I found out that one of my friends liked her too. I didn’t know what to do. I loved her, but I didn’t want to hurt my friend. My heart felt like it was being pulled in two different directions, and I didn’t know which way to go.</p>
+    <p>Other friends started teasing me and joking about the “bro code.” They said I wasn’t supposed to like her if my friend liked her too. I felt so small and sad. I started doubting myself and thinking that maybe I didn’t deserve her. Sometimes I even tried to act like I didn’t care, but inside I was hurting more than ever.</p>
+    <p>Because of all this, I stopped talking to her for a while. It was one of the hardest things I’ve ever done. I missed her so much every day. I wanted to call her, to hear her voice, to see her smile, but I was too scared of the teasing and too scared of getting hurt.</p>
+    <p>Even though it was painful, I realized that love wasn’t easy. I had to make choices, even if they were hard. I wanted to be brave, but I had to find the strength inside me to face my feelings and the challenges around me.</p>
+<hr>
+    <h2>Chapter 6: Being Brave</h2>
+    <p>After a while, I realized I had to be brave. I talked honestly with my friend and told him that I liked her, and that she liked me too. It was scary, but I knew I couldn’t hide my feelings anymore. I wanted to do the right thing and be honest with everyone.</p>
+    <p>Slowly, my confidence came back. Her friends also supported me and encouraged me to be with her. They told me that I shouldn’t give up and that she really liked me. Their support made me feel stronger, and I decided I would try again.</p>
+    <p>We started talking again, slowly at first, and then more and more. Every conversation made me feel happy and alive. I laughed at her jokes, shared little secrets, and felt the warmth of her friendship and love again.</p>
+    <p>I realized something important: love takes courage. It’s about trying even when you’re scared, even when things seem difficult. I learned that being honest about your feelings is the first step to something real and beautiful.</p>
+<hr>
+    <h2>Chapter 7: The Field Trip</h2>
+    <p>One of the happiest days of my life was our school field trip. I got to sit beside her, and we talked nonstop. We shared snacks, laughed at silly jokes, and explored together. Every moment felt magical, and I couldn’t believe I was really there with her.</p>
+    <p>But there was a little sadness too. I waited for her in one spot because she was with her friends, and she didn’t notice me at first. My chest felt tight, and I cried a little. I felt invisible, like she didn’t see me. But I didn’t give up, and eventually, we were together again.</p>
+    <p>The day was full of joy and small adventures. I remember the way her hair shone in the sunlight, the way she laughed at tiny things, and how happy I felt just sitting near her. Every small moment became a memory I wanted to keep forever.</p>
+    <p>By the end of the trip, I felt closer to her than ever. I realized that love isn’t just about big gestures; it’s about small moments, tiny smiles, and little laughs shared together. That day became one of my favorite memories with her.</p>
+<hr>
+    <h2>Chapter 8: Everyday Memories</h2>
+    <p>After the field trip, we continued making memories every day. We walked to school together, shared snacks, and talked about everything—dreams, fears, and silly little things. Sometimes we argued or disagreed, but even the fights taught me patience and how to care about someone.</p>
+    <p>I noticed all the little things about her. The way she twirled her hair when she was thinking. The way she smiled when she was happy. The way she listened carefully when I talked. All these small details made me love her even more.</p>
+    <p>Some nights, I would lie awake thinking about our conversations, the jokes we laughed at, and the little moments that made me happy. Even when we were apart, I felt close to her because of these memories.</p>
+    <p>I realized that love isn’t just about being together all the time. It’s about treasuring the small things, keeping memories close, and feeling connected even when you’re apart. I wanted to remember everything, forever.</p>
+<hr>
+    <h2>Chapter 9: College and Distance</h2>
+    <p>Then college started, and life changed. We became busy with schoolwork, projects, and responsibilities. The time we had together became smaller and smaller. Sometimes we fought because we didn’t have enough time for each other, and I missed her so much.</p>
+    <p>It hurt to think that she might be talking to other people or doing things without me. My heart felt heavy, and I cried sometimes, missing the closeness we used to have. But I knew life was changing for both of us, and we had to try to be strong.</p>
+    <p>One day, she sent me a letter. I cried so much reading it. She told me to focus on myself, on my studies, and on my future. She wanted me to grow into a strong person. I understood, but it hurt to know we couldn’t be together like before.</p>
+    <p>Even though we were apart, I still cared about her. I still loved her. I tried to be strong and focus on school, but my heart ached every day for her.</p>
+<hr>
+    <h2>Chapter 10: Missing Her</h2>
+    <p>Even after we stopped being together, I thought about her every day. I missed her laugh, her voice, her smile, and the way she made me feel special. Sometimes I cried quietly, wishing I could hold her hand again, even just for a moment.</p>
+    <p>Even if she wasn’t with me, I tried to follow her advice. I studied hard and tried to be a better person. I wanted her to be proud of me, even from far away.</p>
+    <p>The memories were both happy and sad. They made me smile and cry at the same time. I missed her, but I also felt grateful for the time we shared.</p>
+    <p>I realized that love is not just about being together. It’s also about caring, remembering, and growing because of that love.</p>
+<hr>
+  <h2>Chapter 11: I Will Love Her Always</h2>
+  <p>Even if she has a new talking stage now, I will still love her. I don’t want to stop. My heart will always care about her. I just want her to be happy, even if it isn’t with me.</p>
+  <p>Sometimes it hurts when I see her with someone else. My chest feels tight, and I want to cry. But even if it hurts, my love doesn’t go away. I will love her forever, no matter what.</p>
+  <p>I remember all the small things we shared—the laughs, the jokes, the late-night calls, the field trips, the tiny moments. I will keep all those memories safe in my heart forever.</p>
+  <p>I know that love isn’t always about being together. It’s about caring, wishing happiness, and loving someone unconditionally. And I will always love her that way.</p>
+
+<hr>
+  <h2>Chapter 12: Forever in My Heart</h2>
+  <p>Even if we are apart, she will always be my first love. She taught me how it feels to love someone completely. She taught me to be brave, to care, and to cherish small moments.</p>
+  <p>I will never forget her. I will never stop loving her. Even if we never meet the same way again, a part of me will always belong to her.</p>
+  <p>My first love is special. It is beautiful. It is painful, but it is the most important thing I have ever felt. I will treasure it, remember it, and keep her in my heart forever.</p>
+  <p>Even if life goes on and she moves further away, my love will remain. She will always be my angel, my memory, my heart, my first love.</p>
+<hr>
+
+
+  </section>
